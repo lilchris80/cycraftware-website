@@ -44,8 +44,7 @@ a {
 
 /* =========================
    HEADER
-   ========================= */
-
+========================= */
 header {
   background: var(--white);
   border-bottom: 1px solid var(--line);
@@ -92,8 +91,7 @@ header .wrap {
 
 /* =========================
    BUTTONS
-   ========================= */
-
+========================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -129,8 +127,7 @@ header .wrap {
 
 /* =========================
    HERO
-   ========================= */
-
+========================= */
 .hero {
   background: #eef4f7;
   padding: 78px 0 40px;
@@ -168,8 +165,7 @@ header .wrap {
 
 /* =========================
    MAIN SERVICE CHOICES
-   ========================= */
-
+========================= */
 .choice {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
@@ -238,8 +234,7 @@ header .wrap {
 
 /* =========================
    SECTIONS
-   ========================= */
-
+========================= */
 .section {
   padding: 78px 0;
 }
@@ -265,8 +260,7 @@ header .wrap {
 
 /* =========================
    SPLIT CONTENT
-   ========================= */
-
+========================= */
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -280,8 +274,7 @@ header .wrap {
 
 /* =========================
    FEATURE GRID
-   ========================= */
-
+========================= */
 .features {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -308,8 +301,7 @@ header .wrap {
 
 /* =========================
    THREE COLUMN GRID
-   ========================= */
-
+========================= */
 .grid3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -336,8 +328,7 @@ header .wrap {
 
 /* =========================
    PILLS
-   ========================= */
-
+========================= */
 .pill {
   display: inline-block;
   padding: 7px 12px;
@@ -351,8 +342,7 @@ header .wrap {
 
 /* =========================
    FLOW
-   ========================= */
-
+========================= */
 .flow {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -366,8 +356,7 @@ header .wrap {
 
 /* =========================
    INVOICE
-   ========================= */
-
+========================= */
 .invoice-section {
   padding: 70px 0;
 }
@@ -411,8 +400,7 @@ header .wrap {
 
 /* =========================
    FOOTER
-   ========================= */
-
+========================= */
 footer {
   background: var(--navy);
   color: var(--white);
@@ -444,8 +432,7 @@ footer {
 
 /* =========================
    TABLET
-   ========================= */
-
+========================= */
 @media (max-width: 900px) {
   .wrap,
   .choice,
@@ -494,8 +481,7 @@ footer {
 
 /* =========================
    PHONES
-   ========================= */
-
+========================= */
 @media (max-width: 700px) {
   .wrap,
   .choice,
@@ -511,7 +497,7 @@ footer {
   }
 
   .brand-logo {
-    width: 150px;
+    width: 215px;
   }
 
   .navlinks {
@@ -588,8 +574,7 @@ footer {
 
 /* =========================
    SMALL PHONES
-   ========================= */
-
+========================= */
 @media (max-width: 420px) {
   .navlinks {
     gap: 7px 12px;
@@ -630,5 +615,45 @@ footer {
 
   .actions .btn {
     width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE DARK MODE
+   Scoped to (max-width: 700px) AND (prefers-color-scheme: dark) only.
+   This cannot affect desktop, and cannot affect mobile light mode.
+   Fixes: header/logo contrast + hero contrast when the phone's OS
+   dark mode is on. Everything else (cards, sections, footer, content)
+   is left exactly as-is, since footer already uses the reversed logo
+   and dark navy background and needs no change.
+========================= */
+@media (max-width: 700px) and (prefers-color-scheme: dark) {
+  header {
+    background: var(--navy);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .brand-logo {
+    content: url("cycraftware-logo-reversed.png");
+  }
+
+  .navlinks a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .navlinks a:hover {
+    color: #ffffff;
+  }
+
+  .hero {
+    background: var(--navy);
+  }
+
+  .hero h1 {
+    color: #ffffff;
+  }
+
+  .hero p {
+    color: rgba(255, 255, 255, 0.8);
   }
 }
