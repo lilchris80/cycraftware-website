@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cycruqqi/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp styles.css $DEPLOYPATH
+    - /bin/cp clearinvoice.html $DEPLOYPATH
+    - /bin/cp custom-software.html $DEPLOYPATH
+    - /bin/cp cycraftware-logo-reversed.png $DEPLOYPATH
+    - /bin/cp cycraftware-logo-transparent.png $DEPLOYPATH
