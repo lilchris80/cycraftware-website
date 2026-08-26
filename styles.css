@@ -1,12 +1,16 @@
 :root {
   --navy: #162d45;
+  --navy-light: #2c4d70;
   --orange: #e88f4f;
-  --muted: #566675;
-  --line: #dce5eb;
-  --bg: #f7f9fb;
+  --muted: #9db1c2;
+  --line: rgba(255, 255, 255, 0.14);
+  --bg: #0f1e2e;
+  --surface: #16283d;
+  --hero-bg: #12233a;
   --white: #ffffff;
   --terra: #c95d5f;
   --green: #3f8f78;
+  --text: #f3f6f8;
 }
 
 * {
@@ -21,7 +25,7 @@ body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--navy);
+  color: var(--text);
   background: var(--bg);
   line-height: 1.55;
   overflow-x: hidden;
@@ -46,7 +50,7 @@ a {
    HEADER
 ========================= */
 header {
-  background: var(--white);
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
 
@@ -68,6 +72,7 @@ header .wrap {
   display: block;
   width: 190px;
   max-width: 100%;
+  content: url("cycraftware-logo-reversed.png");
 }
 
 .navlinks {
@@ -86,7 +91,7 @@ header .wrap {
 }
 
 .navlinks a:hover {
-  color: var(--navy);
+  color: var(--white);
 }
 
 /* =========================
@@ -110,7 +115,7 @@ header .wrap {
 }
 
 .btn-primary {
-  background: var(--navy);
+  background: var(--navy-light);
   color: var(--white);
 }
 
@@ -120,8 +125,8 @@ header .wrap {
 }
 
 .btn-light {
-  background: var(--white);
-  color: var(--navy);
+  background: transparent;
+  color: var(--text);
   border: 1px solid var(--line);
 }
 
@@ -129,7 +134,7 @@ header .wrap {
    HERO
 ========================= */
 .hero {
-  background: #eef4f7;
+  background: var(--hero-bg);
   padding: 78px 0 40px;
 }
 
@@ -179,21 +184,21 @@ header .wrap {
 
 .choice-card {
   min-width: 0;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 32px;
-  box-shadow: 0 16px 40px rgba(22, 45, 69, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .choice-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 50px rgba(22, 45, 69, 0.11);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
 .choice-card.custom {
-  border-top: 5px solid var(--navy);
+  border-top: 5px solid var(--navy-light);
 }
 
 .choice-card.invoice {
@@ -240,7 +245,7 @@ header .wrap {
 }
 
 .section.alt {
-  background: var(--white);
+  background: var(--surface);
 }
 
 .section .wrap {
@@ -283,7 +288,7 @@ header .wrap {
 }
 
 .feature {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 20px;
@@ -310,7 +315,7 @@ header .wrap {
 
 .card {
   min-width: 0;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 17px;
   padding: 28px;
@@ -333,8 +338,8 @@ header .wrap {
   display: inline-block;
   padding: 7px 12px;
   border-radius: 999px;
-  background: #eef4f7;
-  color: var(--navy);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -364,11 +369,11 @@ header .wrap {
 .invoice-box {
   max-width: 900px;
   margin: 0 auto;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 32px;
-  box-shadow: 0 16px 40px rgba(22, 45, 69, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .invoice-box h2 {
@@ -379,7 +384,7 @@ header .wrap {
   margin: 24px 0;
   padding: 24px;
   border-left: 4px solid var(--orange);
-  background: #fff8f2;
+  background: rgba(232, 143, 79, 0.1);
   border-radius: 8px;
   color: var(--muted);
 }
@@ -615,45 +620,5 @@ footer {
 
   .actions .btn {
     width: 100%;
-  }
-}
-
-/* =========================
-   MOBILE DARK MODE
-   Scoped to (max-width: 700px) AND (prefers-color-scheme: dark) only.
-   This cannot affect desktop, and cannot affect mobile light mode.
-   Fixes: header/logo contrast + hero contrast when the phone's OS
-   dark mode is on. Everything else (cards, sections, footer, content)
-   is left exactly as-is, since footer already uses the reversed logo
-   and dark navy background and needs no change.
-========================= */
-@media (max-width: 700px) and (prefers-color-scheme: dark) {
-  header {
-    background: var(--navy);
-    border-bottom-color: rgba(255, 255, 255, 0.12);
-  }
-
-  .brand-logo {
-    content: url("cycraftware-logo-reversed.png");
-  }
-
-  .navlinks a {
-    color: rgba(255, 255, 255, 0.75);
-  }
-
-  .navlinks a:hover {
-    color: #ffffff;
-  }
-
-  .hero {
-    background: var(--navy);
-  }
-
-  .hero h1 {
-    color: #ffffff;
-  }
-
-  .hero p {
-    color: rgba(255, 255, 255, 0.8);
   }
 }
